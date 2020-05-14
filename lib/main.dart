@@ -51,10 +51,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             OutlineButton(
                 onPressed: () {
-                  //Uncomment setState if you want to reproduce "no cleanable" field
+                  //If setState is AFTER textEditingController.clear(); the issue is as presented in https://www.youtube.com/watch?v=52vE5DOdI2c
+                  //If setState is AROUND textEditingController.clear(); text is not cleared.
                   //setState() {
                   textEditingController.clear();
                   //}
+
+                  setState(() {});
 
                   //FocusScope.of(context).unfocus(); // Poor workaround
                 },
