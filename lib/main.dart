@@ -51,9 +51,11 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             OutlineButton(
                 onPressed: () {
-                  setState() {
-                    textEditingController.clear();
-                  }
+                  //Uncomment setState if you want to reproduce "no cleanable" field
+                  //setState() {
+                  textEditingController.clear();
+                  //}
+
                   //FocusScope.of(context).unfocus(); // Poor workaround
                 },
                 child: Text(
