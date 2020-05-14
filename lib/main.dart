@@ -51,7 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             OutlineButton(
                 onPressed: () {
-                  textEditingController.clear();
+                  setState() {
+                    textEditingController.clear();
+                  }
                   //FocusScope.of(context).unfocus(); // Poor workaround
                 },
                 child: Text(
